@@ -25,7 +25,7 @@ SITE_URL = "https://iamjunaidkhokhar.github.io/khokhar-tv-website"
 BASE_PATH = "/" + SITE_URL.split("://", 1)[1].partition("/")[2].strip("/")
 BASE_PATH = "" if BASE_PATH == "/" else BASE_PATH
 SITE_NAME = "Khokhar TV"
-WHATSAPP = "447882746104"
+WHATSAPP = "923191187078"
 WHATSAPP_URL = (
     f"https://wa.me/{WHATSAPP}?text=Hi!%20I%27d%20like%20to%20subscribe%20to%20Khokhar%20TV."
 )
