@@ -1,0 +1,71 @@
+<!--{
+  "title": "Help, setup guides and FAQ",
+  "description": "How to install Khokhar TV on Fire TV, Android TV, Google TV, Android, Windows and Linux, plus answers to common questions about accounts, playback and subscriptions.",
+  "priority": "0.7",
+  "jsonld": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Does Khokhar TV include channels?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Khokhar TV is a media player. It plays the IPTV service assigned to your account and does not host or sell channels itself.\"}},{\"@type\":\"Question\",\"name\":\"How do I install Khokhar TV on Fire TV?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Install the free Downloader app from the Amazon Appstore, allow it to install unknown apps, then enter {{host}}/apk and install the file it downloads.\"}},{\"@type\":\"Question\",\"name\":\"Which devices are supported?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Android TV, Google TV, Fire TV, Android phones and tablets, Windows 10 and 11, and 64-bit Linux.\"}},{\"@type\":\"Question\",\"name\":\"How do I get updates?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The Android app checks for new versions and offers to update itself. Desktop users can download the newest build from the download page.\"}}]}</script>"
+}-->
+<main id="main">
+<div class="wrap page-head">
+  <span class="eyebrow">Help</span>
+  <h1>Setup guides &amp; FAQ</h1>
+  <p>Stuck? Most answers are below. If not, <a href="{{whatsapp}}" rel="noopener">message us on WhatsApp</a> and we'll help you get watching.</p>
+</div>
+
+<section class="section" style="padding-top:24px">
+  <div class="wrap">
+    <div class="grid g2">
+      <div class="card" id="fire-tv">
+        <div class="icon">{{icon:firetv}}</div>
+        <h3>Install on Amazon Fire TV</h3>
+        <ol class="muted">
+          <li>From the Fire TV home screen, search for <strong>Downloader</strong> and install it.</li>
+          <li>Go to <em>Settings ▸ My Fire TV ▸ Developer options ▸ Install unknown apps</em> and turn on Downloader. (No Developer options? Open <em>About</em> and press OK on your device name seven times.)</li>
+          <li>Open Downloader, type <span class="code">{{host}}/apk</span> and press Go.</li>
+          <li>When the download finishes, choose <strong>Install</strong>, then <strong>Open</strong>.</li>
+        </ol>
+      </div>
+      <div class="card" id="android-tv">
+        <div class="icon">{{icon:tv}}</div>
+        <h3>Install on Android TV &amp; Google TV</h3>
+        <ol class="muted">
+          <li>Install <strong>Downloader</strong> (or any browser) from the Play Store on your TV.</li>
+          <li>Open <em>Settings ▸ System ▸ About</em> and press OK on <em>Android TV OS build</em> seven times to unlock developer mode.</li>
+          <li>Go to <em>Settings ▸ Apps ▸ Security &amp; restrictions ▸ Unknown sources</em> and allow Downloader.</li>
+          <li>Open Downloader, enter <span class="code">{{host}}/apk</span>, then install.</li>
+        </ol>
+      </div>
+      <div class="card" id="android-phone">
+        <div class="icon">{{icon:phone}}</div>
+        <h3>Install on Android phone or tablet</h3>
+        <ol class="muted">
+          <li>Open the <a href="/download#android">download page</a> on your phone and tap <strong>Download APK</strong>.</li>
+          <li>Open the file when it finishes. If asked, allow your browser to install unknown apps.</li>
+          <li>Tap <strong>Install</strong>, then sign in.</li>
+        </ol>
+      </div>
+      <div class="card" id="desktop">
+        <div class="icon">{{icon:windows}}</div>
+        <h3>Install on Windows or Linux</h3>
+        <ol class="muted">
+          <li>Download the build for your system from the <a href="/download#windows">download page</a>.</li>
+          <li><strong>Windows:</strong> unzip the folder and run <span class="code">iptv_pro.exe</span>. If SmartScreen appears, choose <em>More info ▸ Run anyway</em>.</li>
+          <li><strong>Linux:</strong> extract the archive, install <span class="code">libmpv2</span> if needed, and run <span class="code">./iptv_pro</span>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap faq">
+    <h2 style="text-align:center">Frequently asked questions</h2>
+    <details><summary>Does Khokhar TV include channels?</summary><p>Khokhar TV is a media player. It plays the IPTV service assigned to your account (Xtream Codes or M3U) and doesn't host or sell channels itself. You're responsible for having the right to access the content you play.</p></details>
+    <details><summary>Which devices are supported?</summary><p>Android TV, Google TV, Fire TV, Android phones and tablets, Windows 10 and 11, and 64-bit Linux. Apple devices are in development.</p></details>
+    <details><summary>How do I get updates?</summary><p>The Android app checks for new versions and offers to update itself. On desktop, download the newest build from the <a href="/download">download page</a>.</p></details>
+    <details><summary>A channel keeps buffering. What can I do?</summary><p>Try a wired connection or move the box closer to your router, then reopen the channel. The app reconnects once automatically when a stream stalls. If one channel keeps failing while others play, let us know on WhatsApp.</p></details>
+    <details><summary>How do I change subtitles or audio language?</summary><p>While a film is playing, press Up or Down on your remote to open tracks. On series, hold Up or Down. On touch devices, tap the subtitles button.</p></details>
+    <details><summary>How do I watch two channels at once?</summary><p>Open <strong>Multi-view</strong> from the home screen. Use Left and Right to pick a screen, Up and Down to change its channel, and hold OK to change the layout.</p></details>
+    <details><summary>How do I delete my account?</summary><p>Message us on WhatsApp or by email and we'll remove your account and data. Details are in the <a href="/privacy">privacy policy</a>.</p></details>
+  </div>
+</section>
+</main>
