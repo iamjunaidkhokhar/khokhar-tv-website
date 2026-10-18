@@ -15,8 +15,10 @@ python3 scripts/build.py   # regenerates *.html, apk/index.html, sitemap.xml, ro
 
 Commit both the source and the generated files.
 
-- **Domain:** change `SITE_URL` in `scripts/build.py`, rebuild, and add a
-  `CNAME` file containing the bare domain.
+- **Address:** the site lives at
+  https://iamjunaidkhokhar.github.io/khokhar-tv-website. To move to a custom
+  domain, set `SITE_URL` in `scripts/build.py` to it (links re-base
+  automatically), rebuild, and add a `CNAME` file containing the bare domain.
 - **Prices:** set `PRICES` in `scripts/build.py` (None shows "Ask us").
 - **WhatsApp number:** `WHATSAPP` in `scripts/build.py`.
 

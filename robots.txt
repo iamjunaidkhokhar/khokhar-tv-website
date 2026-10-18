@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khokhartv.com/sitemap.xml
+Sitemap: https://iamjunaidkhokhar.github.io/khokhar-tv-website/sitemap.xml

@@ -18,7 +18,12 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "pages"
 
-SITE_URL = "https://khokhartv.com"
+# Public URL of the site, without a trailing slash. On a GitHub project page
+# that includes the repo path; with a custom domain it's just the origin.
+SITE_URL = "https://iamjunaidkhokhar.github.io/khokhar-tv-website"
+# Path prefix that root-relative links ("/download") need, derived from SITE_URL.
+BASE_PATH = "/" + SITE_URL.split("://", 1)[1].partition("/")[2].strip("/")
+BASE_PATH = "" if BASE_PATH == "/" else BASE_PATH
 SITE_NAME = "Khokhar TV"
 WHATSAPP = "447882746104"
 WHATSAPP_URL = (
@@ -179,12 +184,20 @@ def render(body):
     return body
 
 
+def rebase(html):
+    """Prefixes root-relative URLs with BASE_PATH (project pages live under /<repo>/)."""
+    if not BASE_PATH:
+        return html
+    html = re.sub(r'((?:href|src)=")/(?!/)', r"\g<1>" + BASE_PATH + "/", html)
+    return re.sub(r"(srcset=\"[^\"]*)", lambda m: re.sub(r"(^srcset=\"|, )/(?!/)", r"\g<1>" + BASE_PATH + "/", m.group(1)), html)
+
+
 def main():
     pages = []
     for f in sorted(SRC.glob("*.html")):
         name = f.stem
         meta, body = parse(f.read_text())
-        out = head(meta, name) + header(name) + render(body) + footer()
+        out = rebase(head(meta, name) + header(name) + render(body) + footer())
         target = ROOT / meta.get("out", f"{name}.html")
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(out)
@@ -200,6 +213,10 @@ def main():
     (ROOT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n'
     )
+    icons = [{"src": f"{BASE_PATH}/assets/img/icon-{s}.png", "sizes": f"{s}x{s}", "type": "image/png"} for s in (192, 512)]
+    (ROOT / "site.webmanifest").write_text(json.dumps({
+        "name": SITE_NAME, "short_name": SITE_NAME, "start_url": f"{BASE_PATH}/",
+        "display": "standalone", "background_color": "#07090d", "theme_color": "#07090d", "icons": icons}) + "\n")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
     print("built sitemap.xml, robots.txt")
 
